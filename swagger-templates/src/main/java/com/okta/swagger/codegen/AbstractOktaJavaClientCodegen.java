@@ -24,6 +24,7 @@ import io.swagger.codegen.CodegenParameter;
 import io.swagger.codegen.CodegenProperty;
 import io.swagger.codegen.CodegenType;
 import io.swagger.codegen.languages.AbstractJavaCodegen;
+import io.swagger.models.ComposedModel;
 import io.swagger.models.HttpMethod;
 import io.swagger.models.Model;
 import io.swagger.models.ModelImpl;
@@ -36,6 +37,7 @@ import io.swagger.models.properties.Property;
 import io.swagger.models.properties.RefProperty;
 import io.swagger.parser.SwaggerException;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -109,9 +111,12 @@ public abstract class AbstractOktaJavaClientCodegen extends AbstractJavaCodegen 
 
     protected void tagEnums(Swagger swagger) {
         swagger.getDefinitions().forEach((name, model) -> {
-            assert model instanceof ModelImpl : "Model MUST be an instance of ModelImpl";
-            if (((ModelImpl) model).getEnum() != null) {
-                enumList.add(name);
+
+            if (model instanceof ModelImpl) {
+
+                if (((ModelImpl) model).getEnum() != null) {
+                    enumList.add(name);
+                }
             }
         });
     }
@@ -392,6 +397,14 @@ public abstract class AbstractOktaJavaClientCodegen extends AbstractJavaCodegen 
                             .forEach(param -> codegenModel.imports.add(param.dataType));
                     }
             });
+        }
+
+        // force alias == false (likely only relevant for Lists, but something changed in swagger 2.2.3 to require this)
+        codegenModel.isAlias = false;
+
+        String parent = (String) model.getVendorExtensions().get("x-okta-parent");
+        if (StringUtils.isNotEmpty(parent)) {
+            codegenModel.parent = toApiName(parent.substring(parent.lastIndexOf("/")));
         }
 
        return codegenModel;

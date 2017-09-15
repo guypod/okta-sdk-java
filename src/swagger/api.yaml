@@ -29,7 +29,7 @@
       "name": "Apache-2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "0.3.0"
+    "version": "0.4.0"
   },
   "externalDocs": {
     "description": "Find more info here",
@@ -247,6 +247,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Removes a specific group rule by id from your organization",
         "operationId": "deleteRule",
         "parameters": [
           {
@@ -274,6 +275,7 @@
             "api_token": []
           }
         ],
+        "summary": "Delete a group Rule",
         "tags": [
           "Group"
         ]
@@ -282,6 +284,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Fetches a specific group rule by id from your organization",
         "operationId": "getRule",
         "parameters": [
           {
@@ -307,6 +310,7 @@
             "api_token": []
           }
         ],
+        "summary": "Get Group Rule",
         "tags": [
           "Group"
         ]
@@ -358,6 +362,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Activates a specific group rule by id from your organization",
         "operationId": "activateRule",
         "parameters": [
           {
@@ -380,6 +385,7 @@
             "api_token": []
           }
         ],
+        "summary": "Activate a group Rule",
         "tags": [
           "Group"
         ]
@@ -390,6 +396,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Deactivates a specific group rule by id from your organization",
         "operationId": "deactivateRule",
         "parameters": [
           {
@@ -412,6 +419,7 @@
             "api_token": []
           }
         ],
+        "summary": "Deactivate a group Rule",
         "tags": [
           "Group"
         ]
@@ -422,6 +430,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Removes a group with `OKTA_GROUP` type from your organization.",
         "operationId": "deleteGroup",
         "parameters": [
           {
@@ -444,6 +453,7 @@
             "api_token": []
           }
         ],
+        "summary": "Remove Group",
         "tags": [
           "Group"
         ]
@@ -452,6 +462,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Lists all group rules for your organization.",
         "operationId": "getGroup",
         "parameters": [
           {
@@ -482,6 +493,7 @@
             "api_token": []
           }
         ],
+        "summary": "List Group Rules",
         "tags": [
           "Group"
         ]
@@ -490,6 +502,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Updates the profile for a group with `OKTA_GROUP` type from your organization.",
         "operationId": "updateGroup",
         "parameters": [
           {
@@ -523,6 +536,7 @@
             "api_token": []
           }
         ],
+        "summary": "Update Group",
         "tags": [
           "Group"
         ]
@@ -533,6 +547,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Enumerates all [users](/docs/api/resources/users.html#user-model) that are a member of a group.",
         "operationId": "listGroupUsers",
         "parameters": [
           {
@@ -542,12 +557,14 @@
             "type": "string"
           },
           {
+            "description": "Specifies the pagination cursor for the next page of users",
             "in": "query",
             "name": "after",
             "type": "string"
           },
           {
             "default": -1,
+            "description": "Specifies the number of user results in a page",
             "format": "int32",
             "in": "query",
             "name": "limit",
@@ -573,6 +590,7 @@
             "api_token": []
           }
         ],
+        "summary": "List Group Members",
         "tags": [
           "Group"
         ]
@@ -583,6 +601,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Removes a [user](users.html#user-model) from a group with `OKTA_GROUP` type.",
         "operationId": "removeGroupUser",
         "parameters": [
           {
@@ -611,6 +630,7 @@
             "api_token": []
           }
         ],
+        "summary": "Remove User from Group",
         "tags": [
           "Group"
         ]
@@ -619,6 +639,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Adds a [user](users.html#user-model) to a group with `OKTA_GROUP` type.",
         "operationId": "addUserToGroup",
         "parameters": [
           {
@@ -647,6 +668,7 @@
             "api_token": []
           }
         ],
+        "summary": "Add User to Group",
         "tags": [
           "Group"
         ]
@@ -784,6 +806,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Deletes a user permanently.  This operation can only be performed on users that have a `DEPROVISIONED` status.  **This action cannot be recovered!**",
         "operationId": "deactivateOrDeleteUser",
         "parameters": [
           {
@@ -806,6 +829,7 @@
             "api_token": []
           }
         ],
+        "summary": "Delete User",
         "tags": [
           "User"
         ]
@@ -814,6 +838,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Fetches a user from your Okta organization.",
         "operationId": "getUser",
         "parameters": [
           {
@@ -839,6 +864,7 @@
             "api_token": []
           }
         ],
+        "summary": "Get User",
         "tags": [
           "User"
         ]
@@ -847,6 +873,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Update a user's profile and/or credentials using strict-update semantics.",
         "operationId": "updateUser",
         "parameters": [
           {
@@ -880,6 +907,7 @@
             "api_token": []
           }
         ],
+        "summary": "Update User",
         "tags": [
           "User"
         ]
@@ -890,6 +918,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Fetches appLinks for all direct or indirect (via group membership) assigned applications.",
         "operationId": "listAppLinks",
         "parameters": [
           {
@@ -924,6 +953,7 @@
             "api_token": []
           }
         ],
+        "summary": "Get Assigned App Links",
         "tags": [
           "User"
         ]
@@ -934,6 +964,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Changes a user's password by validating the user's current password.  This operation can only be performed on users in `STAGED`, `ACTIVE`, `PASSWORD_EXPIRED`, or `RECOVERY` status that have a valid [password credential](#password-object)",
         "operationId": "changePassword",
         "parameters": [
           {
@@ -967,6 +998,7 @@
             "api_token": []
           }
         ],
+        "summary": "Change Password",
         "tags": [
           "User"
         ]
@@ -977,6 +1009,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Changes a user's recovery question & answer credential by validating the user's current password.  This operation can only be performed on users in **STAGED**, **ACTIVE** or **RECOVERY** `status` that have a valid [password credential](#password-object)",
         "operationId": "changeRecoveryQuestion",
         "parameters": [
           {
@@ -1010,6 +1043,7 @@
             "api_token": []
           }
         ],
+        "summary": "Change Recovery Question",
         "tags": [
           "User"
         ]
@@ -1020,6 +1054,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Generates a one-time token (OTT) that can be used to reset a user's password.  The user will be required to validate their security question's answer when visiting the reset link.  This operation can only be performed on users with a valid [recovery question credential](#recovery-question-object) and have an `ACTIVE` status.",
         "operationId": "forgotPassword",
         "parameters": [
           {
@@ -1059,6 +1094,368 @@
             "api_token": []
           }
         ],
+        "summary": "Forgot Password",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/factors": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Enumerates all the enrolled factors for the specified user",
+        "operationId": "listFactors",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Factor"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Enrolls a user with a supported [factor](#list-factors-to-enroll)",
+        "operationId": "addFactor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Factor"
+            }
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "updatePhone",
+            "type": "boolean"
+          },
+          {
+            "default": "",
+            "description": "id of SMS template (only for SMS factor)",
+            "in": "query",
+            "name": "templateId",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Factor"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "summary": "Enroll Factor",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/factors/catalog": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Enumerates all the [supported factors](#supported-factors-for-providers) that can be enrolled for the specified user",
+        "operationId": "listFactorsCatalog",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Factor"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/factors/questions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Enumerates all available security questions for a user's `question` factor",
+        "operationId": "listQuestions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/SecurityQuestion",
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/factors/{factorId}": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Unenrolls an existing factor for the specified user, allowing the user to enroll a new factor.",
+        "operationId": "deleteFactor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "factorId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      },
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Fetches a factor for the specified user",
+        "operationId": "getFactor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "factorId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Factor"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/factors/{factorId}/lifecycle/activate": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "The `sms` and `token:software:totp` [factor types](#factor-type) require activation to complete the enrollment process.",
+        "operationId": "activateUserFactor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "factorId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VerifyFactorRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Factor",
+              "type": "object"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "summary": "Activate Factor",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/factors/{factorId}/verify": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Verifies an OTP for a `token` or `token:hardware` factor",
+        "operationId": "verifyFactor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "factorId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "templateId",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VerifyFactorRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/VerifyFactorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "summary": "Verify Push Factor",
         "tags": [
           "User"
         ]
@@ -1069,6 +1466,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Fetches the groups of which the user is a member.",
         "operationId": "listUserGroups",
         "parameters": [
           {
@@ -1109,6 +1507,7 @@
             "api_token": []
           }
         ],
+        "summary": "Get Member Groups",
         "tags": [
           "User"
         ]
@@ -1119,6 +1518,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Activates a user.  This operation can only be performed on users with a `STAGED` status.  Activation of a user is an asynchronous operation.  The user will have the `transitioningToStatus` property with a value of `ACTIVE` during activation to indicate that the user hasn't completed the asynchronous operation.  The user will have a status of `ACTIVE` when the activation process is complete.",
         "operationId": "activateUser",
         "parameters": [
           {
@@ -1129,6 +1529,7 @@
           },
           {
             "default": true,
+            "description": "Sends an activation email to the user if true",
             "in": "query",
             "name": "sendEmail",
             "required": true,
@@ -1151,6 +1552,7 @@
             "api_token": []
           }
         ],
+        "summary": "Activate User",
         "tags": [
           "User"
         ]
@@ -1161,6 +1563,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Deactivates a user.  This operation can only be performed on users that do not have a `DEPROVISIONED` status.  Deactivation of a user is an asynchronous operation.  The user will have the `transitioningToStatus` property with a value of `DEPROVISIONED` during deactivation to indicate that the user hasn't completed the asynchronous operation.  The user will have a status of `DEPROVISIONED` when the deactivation process is complete.",
         "operationId": "deactivateUser",
         "parameters": [
           {
@@ -1183,6 +1586,7 @@
             "api_token": []
           }
         ],
+        "summary": "Deactivate User",
         "tags": [
           "User"
         ]
@@ -1193,6 +1597,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "This operation transitions the user to the status of `PASSWORD_EXPIRED` so that the user is required to change their password at their next login.",
         "operationId": "expirePassword",
         "parameters": [
           {
@@ -1203,6 +1608,7 @@
           },
           {
             "default": false,
+            "description": "Sets the user's password to a temporary password,  if true",
             "in": "query",
             "name": "tempPassword",
             "type": "boolean"
@@ -1224,6 +1630,7 @@
             "api_token": []
           }
         ],
+        "summary": "Expire Password",
         "tags": [
           "User"
         ]
@@ -1234,6 +1641,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "This operation resets all factors for the specified user. All MFA factor enrollments returned to the unenrolled state. The user's status remains ACTIVE. This link is present only if the user is currently enrolled in one or more MFA factors.",
         "operationId": "resetAllFactors",
         "parameters": [
           {
@@ -1256,6 +1664,7 @@
             "api_token": []
           }
         ],
+        "summary": "Reset Factors",
         "tags": [
           "User"
         ]
@@ -1266,6 +1675,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Generates a one-time token (OTT) that can be used to reset a user's password.  The OTT link can be automatically emailed to the user or returned to the API caller and distributed using a custom flow.",
         "operationId": "resetPassword",
         "parameters": [
           {
@@ -1302,6 +1712,7 @@
             "api_token": []
           }
         ],
+        "summary": "Reset Password",
         "tags": [
           "User"
         ]
@@ -1312,6 +1723,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Suspends a user.  This operation can only be performed on users with an `ACTIVE` status.  The user will have a status of `SUSPENDED` when the process is complete.",
         "operationId": "suspendUser",
         "parameters": [
           {
@@ -1334,6 +1746,7 @@
             "api_token": []
           }
         ],
+        "summary": "Suspend User",
         "tags": [
           "User"
         ]
@@ -1344,6 +1757,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Unlocks a user with a `LOCKED_OUT` status and returns them to `ACTIVE` status.  Users will be able to login with their current password.",
         "operationId": "unlockUser",
         "parameters": [
           {
@@ -1366,6 +1780,7 @@
             "api_token": []
           }
         ],
+        "summary": "Unlock User",
         "tags": [
           "User"
         ]
@@ -1376,6 +1791,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Unsuspends a user and returns them to the `ACTIVE` state.  This operation can only be performed on users that have a `SUSPENDED` status.",
         "operationId": "unsuspendUser",
         "parameters": [
           {
@@ -1398,6 +1814,7 @@
             "api_token": []
           }
         ],
+        "summary": "Unsuspend User",
         "tags": [
           "User"
         ]
@@ -1408,6 +1825,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Lists all roles assigned to a user.",
         "operationId": "listAssignedRoles",
         "parameters": [
           {
@@ -1449,6 +1867,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Assigns a role to a user.",
         "operationId": "addRoleToUser",
         "parameters": [
           {
@@ -1492,6 +1911,7 @@
         "consumes": [
           "application/json"
         ],
+        "description": "Unassigns a role from a user.",
         "operationId": "removeRoleFromUser",
         "parameters": [
           {
@@ -1758,6 +2178,190 @@
       "x-okta-tags": [
         "User"
       ]
+    },
+    "Factor": {
+      "properties": {
+        "device": {
+          "type": "string"
+        },
+        "deviceType": {
+          "enum": [
+            "other",
+            "any",
+            "phone",
+            "mobile",
+            "hardware",
+            "smartphone:ios",
+            "smartphone:android",
+            "smartphone:windows",
+            "smartphone:blackberry",
+            "smartphone:unknown",
+            "ios",
+            "android",
+            "windows",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "factorType": {
+          "type": "string"
+        },
+        "mfaStateTokenId": {
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "#/definitions/FactorProfile"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "rechallengeExistingFactor": {
+          "type": "boolean"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "verify": {
+          "$ref": "#/definitions/Verify"
+        }
+      },
+      "type": "object",
+      "x-okta-tags": [
+        "Factor"
+      ]
+    },
+    "FactorProfile": {
+      "additionalProperties": true,
+      "x-okta-tags": [
+        "Factor"
+      ]
+    },
+    "SecurityQuestionFactorProfile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/FactorProfile"
+        }
+      ],
+      "required": [
+        "question"
+      ],
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "questionText": {
+          "type": "string"
+        },
+        "answer": {
+          "type": "string"
+        }
+      },
+     "x-okta-tags": [
+       "Factor"
+     ]
+    },
+    "SmsFactorProfile": {
+#      "allOf": [
+#        {
+#          "$ref": "#/definitions/FactorProfile"
+#        }
+#      ],
+      "required": [
+        "phoneNumber"
+      ],
+      "properties": {
+        "phoneNumber": {
+          "type": "string"
+        }
+      },
+      "x-okta-parent": "#/definitions/FactorProfile",
+             "x-okta-tags": [
+               "Factor"
+             ]
+    },
+    "CallFactorProfile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/FactorProfile"
+        }
+      ],
+      "required": [
+        "phoneNumber"
+      ],
+      "properties": {
+        "phoneNumber": {
+          "type": "string"
+        },
+        "phoneExtension": {
+          "type": "string"
+        }
+      },
+             "x-okta-tags": [
+               "Factor"
+             ]
+    },
+    "TotpFactorProfile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/FactorProfile"
+        }
+      ],
+      "properties": {
+        "credentialId": {
+          "type": "string"
+        }
+      },
+             "x-okta-tags": [
+               "Factor"
+             ]
+    },
+    "SecurIDFactorProfile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/FactorProfile"
+        }
+      ],
+      "properties": {
+        "credentialId": {
+          "type": "string"
+        }
+      },
+             "x-okta-tags": [
+               "Factor"
+             ]
+    },
+    "YubiKeyFactorProfile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/FactorProfile"
+        }
+      ],
+      "properties": {
+        "credentialId": {
+          "type": "string"
+        }
+      },
+             "x-okta-tags": [
+               "Factor"
+             ]
+    },
+    "EmailFactorProfile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/FactorProfile"
+        }
+      ],
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+             "x-okta-tags": [
+               "Factor"
+             ]
     },
     "ForgotPasswordResponse": {
       "properties": {
@@ -2106,15 +2710,11 @@
       "properties": {
         "answer": {
           "type": "string"
-        },
-        "question": {
-          "type": "string"
         }
       },
-      "type": "object",
-      "x-okta-tags": [
-        "User"
-      ]
+             "x-okta-tags": [
+               "Factor"
+             ]
     },
     "ResetPasswordToken": {
       "properties": {
@@ -2178,6 +2778,20 @@
         "INACTIVE"
       ],
       "type": "string",
+      "x-okta-tags": [
+        "User"
+      ]
+    },
+    "SecurityQuestion": {
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "questionText": {
+          "type": "string"
+        }
+      },
+      "type": "object",
       "x-okta-tags": [
         "User"
       ]
@@ -2535,7 +3149,7 @@
           "$ref": "#/definitions/AuthenticationProvider"
         },
         "recovery_question": {
-          "$ref": "#/definitions/RecoveryQuestionCredential"
+          "$ref": "#/definitions/SecurityQuestion"
         }
       },
       "type": "object",
@@ -2585,6 +3199,79 @@
       "x-okta-tags": [
         "User"
       ]
+    },
+    "Verify": {
+      "properties": {
+        "activationToken": {
+          "type": "string"
+        },
+        "nextPassCode": {
+          "type": "string"
+        },
+        "passCode": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+                            "x-okta-tags": [
+                              "Factor"
+                            ]
+    },
+    "VerifyFactorRequest": {
+      "properties": {
+        "nextPassCode": {
+          "type": "string"
+        },
+        "passCode": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+                            "x-okta-tags": [
+                              "Factor"
+                            ]
+    },
+    "VerifyFactorResponse": {
+      "properties": {
+        "_embedded": {
+          "additionalProperties": {
+            "type": "object"
+          },
+          "readOnly": true,
+          "type": "object"
+        },
+        "_links": {
+          "additionalProperties": {
+            "type": "object"
+          },
+          "readOnly": true,
+          "type": "object"
+        },
+        "expiresAt": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "factorResult": {
+          "enum": [
+            "SUCCESS",
+            "CHALLENGE",
+            "WAITING",
+            "FAILED",
+            "REJECTED",
+            "TIMEOUT",
+            "TIME_WINDOW_EXCEEDED",
+            "PASSCODE_REPLAYED",
+            "ERROR"
+          ],
+          "readOnly": true,
+          "type": "string"
+        },
+        "factorResultMessage": {
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
     }
   }
 }

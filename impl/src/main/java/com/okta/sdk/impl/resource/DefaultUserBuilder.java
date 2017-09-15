@@ -18,9 +18,9 @@ package com.okta.sdk.impl.resource;
 
 import com.okta.sdk.client.Client;
 import com.okta.sdk.lang.Strings;
+import com.okta.sdk.resource.user.SecurityQuestion;
 import com.okta.sdk.resource.user.UserBuilder;
 import com.okta.sdk.resource.user.PasswordCredential;
-import com.okta.sdk.resource.user.RecoveryQuestionCredential;
 import com.okta.sdk.resource.user.User;
 import com.okta.sdk.resource.user.UserCredentials;
 import com.okta.sdk.resource.user.UserProfile;
@@ -142,9 +142,9 @@ public class DefaultUserBuilder implements UserBuilder {
             user.setCredentials(credentials);
 
             if (Strings.hasText(securityQuestion)) {
-                RecoveryQuestionCredential question = client.instantiate(RecoveryQuestionCredential.class);
+                SecurityQuestion question = client.instantiate(SecurityQuestion.class);
                 question.setQuestion(securityQuestion);
-                question.setAnswer(securityQuestionAnswer);
+//                question.set(securityQuestionAnswer);
                 credentials.setRecoveryQuestion(question);
             }
 
